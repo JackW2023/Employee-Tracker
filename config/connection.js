@@ -7,6 +7,18 @@ const mysql = require("mysql2");
     // it create a new connection to MySQL Database(db)
 // host: is where my MySQL server is running. I'm setting it to localhost
 // localhost: setting the host to localhost means the server is running on the same machine as Node.js application
-const connection = mysql.createConnection({
+// username: the username to log into the MySQL server
+// password: the password associated with the username
+// database: The name of the db
+// The console log will log if the application has connected to the employees_db database
+const connection = mysql.createConnection(
+    {
+        host: 'localhost',
+        user: 'root',
+        password: 'password',
+        database: 'employees_db'
+    },
+    console.log("Successfully connect to the employees_db")
+);
 
-})
+// I am 
