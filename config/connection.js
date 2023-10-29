@@ -21,4 +21,6 @@ const connection = mysql.createConnection(
     console.log("Successfully connect to the employees_db")
 );
 
-// I am 
+// I am the 'connection' object so that it can be imported and used in other parts of your application 
+// this will allow me to use the same database `connection` across multiple files or modules without having to establish a new connection each time.
+module.exports = connection;
