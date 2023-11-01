@@ -21,3 +21,32 @@ CREATE TABLE department(
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(30) UNIQUE NOT NULL
 );
+
+-- I am creating a table name role
+    -- I declare an unique identifier
+        -- it will be integer
+        -- it will auto increment 
+        -- it has a primary key
+    -- I declare the title of the role
+        -- it has 30 characters
+        -- It is unique
+        -- it is not null
+    -- I declare another column `salary`
+        -- it will be decimals
+        -- it will not be null
+    -- I declare an integer
+        -- it will reference the department 
+        -- it will not be null
+    -- The `FOREIGN KEY` serves as a bridge
+        -- establishes a relationship between the department_id in the role table and the id in the department table
+        -- `ON DELETE CASCADE`
+            -- if a department is deleted, all roles associated with that department will also be deleted
+CREATE TABLE role(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(30) UNIQUE NOT NULL,
+    salary DECIMAL NOT NULL,
+    department_id INT NOT NULL,
+    FOREIGN KEY (department_id)
+    REFERENCES department(id)
+    ON DELETE CASCADE
+);
